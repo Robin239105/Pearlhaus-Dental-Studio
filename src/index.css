@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #FFFFFF;
+  --off-white: #FAFCFB;
+  --surface: #F4F8F6;
+  --surface-raised: #EDF4F0;
+  --mint: #2DBD8A;
+  --mint-light: #5ECFA6;
+  --mint-dark: #1E9B6E;
+  --mint-pale: #E8F7F2;
+  --mint-glow: rgba(45,189,138,0.15);
+  --navy: #0D2137;
+  --slate: #4A5568;
+  --muted: #8FA3A0;
+  --border: #E2EDE9;
+  --border-active: rgba(45,189,138,0.4);
+  --error: #E53E3E;
+  --success: #2DBD8A;
+  --warm-white: #FFF8F5;
+}
+
+body {
+  margin: 0;
+  background-color: var(--off-white);
+  color: var(--navy);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page wrapper container */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: var(--mint-pale);
+  color: var(--mint-dark);
+}
+
+/* Custom styles for React Day Picker to match premium UI */
+.rdp {
+  --rdp-cell-size: 40px !important;
+  --rdp-accent-color: var(--mint) !important;
+  --rdp-background-color: var(--mint-pale) !important;
+  margin: 1em auto !important;
+}
+
+.rdp-day_selected, 
+.rdp-day_selected:hover {
+  background-color: var(--mint) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.rdp-day_today {
+  color: var(--mint-dark) !important;
+  font-weight: bold;
+  border: 1px solid var(--mint-light) !important;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: var(--mint-pale) !important;
+  color: var(--mint-dark) !important;
+}
+
+/* Medical Viewport Laser Scan Animation */
+@keyframes scan {
+  0%, 100% {
+    top: 0%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-scan {
+  animation: scan 4s infinite ease-in-out;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hide scrollbar for horizontal scroll elements */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

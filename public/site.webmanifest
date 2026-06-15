@@ -1,0 +1,17 @@
+{
+  "name": "Pearlhaus Dental Studio",
+  "short_name": "Pearlhaus",
+  "description": "Sydney CBD's premier boutique dental studio. Advanced cosmetic, restorative & general dentistry since 2009.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D2137",
+  "theme_color": "#2DBD8A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
